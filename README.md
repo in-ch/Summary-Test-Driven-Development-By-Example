@@ -53,8 +53,12 @@
 ### 1장. 다중 통화를 지원하는 Money 객체
 
 > 다음 예제를 TTD 해보자.
-> <img width="567" alt="ex1" src="https://user-images.githubusercontent.com/49556566/193597195-9af8b5c4-2b5c-48c1-81c2-270b6cd8da5a.png"> > <img width="594" alt="ex2" src="https://user-images.githubusercontent.com/49556566/193597221-f2aae76e-36d1-4620-a2e1-3b74f5b7fa00.png">
+> <img width="567" alt="ex1" src="https://user-images.githubusercontent.com/49556566/193597195-9af8b5c4-2b5c-48c1-81c2-270b6cd8da5a.png"> <img width="594" alt="ex2" src="https://user-images.githubusercontent.com/49556566/193597221-f2aae76e-36d1-4620-a2e1-3b74f5b7fa00.png">
 >
 > - 통화가 다른 두 금액을 더해서 주어진 환율에 맞게 변한 금액을 결과로 얻을 수 있어야 한다.
 > - 어떤 금액(주가)을 어떤 수(주식의 수)에 곱한 금액을 결과로 얻을 수 있어야 한다.
 >   이렇게 할 일을 먼저 적고 끝나면 밑줄을 그어주자.
+
+- 스티브 프리만은 테스트와 코드 간의 문제는 중복이 아니라 의존성에 있다.
+- 의존성이란 코드나 테스트 중 한쪽을 수정하면 반드시 다른 한쪽도 수정해야만 하는 것이다.
+- 프로그램에서는 중복만 제거해주어도 자연스럽게 의존성도 제거되는 경우가 많다.
