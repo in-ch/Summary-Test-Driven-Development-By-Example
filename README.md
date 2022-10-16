@@ -187,20 +187,20 @@
 ### 자바스크립트 함수의 테스트 코드 (with JEST)
 
 1. 설치법
-> <pre><code>$ yarn add -D typescript jest @types/jest ts-jest</code></pre>
-> <pre><code>$ yarn add --dev babel-jest @babel/core @babel/preset-env</code></pre>
+<pre><code>$ yarn add -D typescript jest @types/jest ts-jest</code></pre>
+<pre><code>$ yarn add --dev babel-jest @babel/core @babel/preset-env</code></pre>
 
 2. config 파일 생성
-'''
+<pre><code>
 module.exports = {
   preset: "ts-jest", //trypeScript파일은 ts-jest에서 CommonJS구문으로 변환
   testEnvironment: "node", //테스트 환경
   testMatch: ["**/*.spec.[jt]s?(x)", "**/*.test.[jt]s?(x)"], //테스트 파일 위치
 };
-'''
+</code></pre>
 
 3. factorial.ts 파일 작성 
-''' 
+<pre><code>
 export const factorial = (num:number):number=> {
     let total = 1;
     for(let i = num; i>0; i--){
@@ -209,28 +209,28 @@ export const factorial = (num:number):number=> {
     }
     return total;
 }
-'''
+</code></pre>
 
 4. factorial.test.ts 파일 작성 
-'''
+<pre><code>
 import { factorial } from "../utils/factorial";
 
 it('팩토리얼 계산기 : ', () => {
     const actual = factorial(10);
     expect(actual).toBe(3628800);
 });
-'''
+</code></pre>
 
 5. package.json에 script 추가 
-''' 
+<pre><code>
    ...
   "scripts": {
     "test": "jest --watchAll --verbose"
   },
    ...
-'''
+</code></pre>
 
 6. script 실행 
-'''
+<pre><code>
    yarn test
-'''
+</code></pre>
