@@ -184,3 +184,53 @@
 > - 리덕스와 연동된 컨테이너 컴포넌트의 DOM에 특정 이벤트를 발생시켰을 때 우리가 원하는 액션이 잘 디스패치된다. 
 
 
+### 자바스크립트 함수의 테스트 코드 (with JEST)
+
+1. 설치법
+> <pre><code>$ yarn add -D typescript jest @types/jest ts-jest</code></pre>
+> <pre><code>$ yarn add --dev babel-jest @babel/core @babel/preset-env</code></pre>
+
+2. config 파일 생성
+'''
+module.exports = {
+  preset: "ts-jest", //trypeScript파일은 ts-jest에서 CommonJS구문으로 변환
+  testEnvironment: "node", //테스트 환경
+  testMatch: ["**/*.spec.[jt]s?(x)", "**/*.test.[jt]s?(x)"], //테스트 파일 위치
+};
+'''
+
+3. factorial.ts 파일 작성 
+''' 
+export const factorial = (num:number):number=> {
+    let total = 1;
+    for(let i = num; i>0; i--){
+        // console.log(`total : ${total}, i : ${i}`);
+        total = total * i;
+    }
+    return total;
+}
+'''
+
+4. factorial.test.ts 파일 작성 
+'''
+import { factorial } from "../utils/factorial";
+
+it('팩토리얼 계산기 : ', () => {
+    const actual = factorial(10);
+    expect(actual).toBe(3628800);
+});
+'''
+
+5. package.json에 script 추가 
+''' 
+   ...
+  "scripts": {
+    "test": "jest --watchAll --verbose"
+  },
+   ...
+'''
+
+6. script 실행 
+'''
+   yarn test
+'''
