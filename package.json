@@ -16,7 +16,10 @@
     "url": "https://github.com/in-ch/Summary-Test-Driven-Development-By-Example/issues"
   },
   "homepage": "https://github.com/in-ch/Summary-Test-Driven-Development-By-Example#readme",
-  "dependencies": {},
+  "dependencies": {
+    "jest-dom": "^4.0.0",
+    "react-testing-library": "^8.0.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",

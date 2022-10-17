@@ -195,7 +195,7 @@
 <pre><code>$ yarn add -D typescript jest @types/jest ts-jest</code></pre>
 <pre><code>$ yarn add --dev babel-jest @babel/core @babel/preset-env</code></pre>
 
-2. config 파일 생성
+2. jset.config.ts 파일 생성
 <pre><code>
 module.exports = {
   preset: "ts-jest", //trypeScript파일은 ts-jest에서 CommonJS구문으로 변환
@@ -239,3 +239,19 @@ it('팩토리얼 계산기 : ', () => {
 <pre><code>
    yarn test
 </code></pre>
+
+
+### React-testing-library 사용법 
+<pre><code>
+$ yarn add @testing-library/jest-dom
+</code></pre>
+
+1. src/setupTests.js 설정 
+<pre><code>
+import 'react-testing-library/cleanup-after-each';
+import 'jest-dom/extend-expect';
+</code></pre>
+
+2. @testing-library/jest-dom의 다양한 쿼리들 
+https://testing-library.com/docs/queries/about 에서 확인 가능 
+대표적으로 getBy, getAllBy, queryBy, queryAllBy, findBy, findAllBy
